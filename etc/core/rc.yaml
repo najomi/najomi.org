@@ -1,0 +1,19 @@
+debug: true
+debugBar: false
+
+adminEmail: 'zendzirou@gmail.com' 
+
+adminPassword: qwerty
+
+# exception, print, false
+actionOnDeprecated: 'false'
+
+salt: 'FooBarBaz'
+
+browserPublicPath: '/public/'
+browserUploadPath: '/uploads/'
+
+uploadPath: <?php echo BASE_DIRECTORY.'/uploads'?>
+
+defaultLanguage: 'ru'
+defaultLayout: 'bubujka_basic'

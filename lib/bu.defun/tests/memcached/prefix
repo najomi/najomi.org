@@ -1,0 +1,9 @@
+<?
+require_once 'load.php';
+def('flush_md', function(){
+		$_m= new Memcached;
+		$_m->addServer('localhost', 11211) or die ("Could not connect");
+		$_m->flush();
+	});
+flush_md()
+?>

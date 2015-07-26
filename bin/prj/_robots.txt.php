@@ -1,0 +1,1 @@
+Sitemap: http://<?=http_host()?>/sitemap.txt

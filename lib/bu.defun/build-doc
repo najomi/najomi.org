@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+require 'cgi'
+def h wtf
+  CGI.escapeHTML wtf
+end
+
+File.open('doc.html', 'w') do |f|
+  f << "<html><head><title>Bu.defun doc</title>"
+  f << "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /></head><body>\n"
+  f << '<link rel="stylesheet" href="default.css">'
+  f << '<script src="highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script>'
+  Dir.glob('tests/*').sort.each do |dir|
+    f << "<hr><h1>#{File.basename dir}</h1>\n"
+    Dir.glob(dir+'/[^_]*.php').sort.each do |file|
+      f << "<h2>#{File.basename file}</h2>\n"
+      f << "<pre><code class='php'>#{h `cat #{file}`}</code></pre>\n"
+    end
+  end
+  f.write "</body></html>"
+end
+
+
+
+

@@ -1,0 +1,2 @@
+allowedExt: [ mp3, wav, avi, mpg, psd, bmp, jpg, jpeg, gif, png, ico, zip, rar, tar, tgz, gz, txt, doc, html, htm, odt, xls, swf ]
+maxSize: 5242880

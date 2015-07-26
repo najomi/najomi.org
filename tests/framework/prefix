@@ -1,0 +1,3 @@
+<?php
+require_once 'load_me.php'
+?>
