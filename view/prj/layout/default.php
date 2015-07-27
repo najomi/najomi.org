@@ -19,7 +19,6 @@
   <a href='mailto:zendzirou@gmail.com'><img src='/public/hire.png' width='750px' style='border: 1px solid grey; margin: 20px 0px;'></a>
   </center>
   <div id='content'>
-    <?=bu::act('flash_block')?>
     <?=$data?>
   </div>
   <center id='grape-banner'>
