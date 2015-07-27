@@ -1,3 +1,3 @@
 #!/bin/bash
 git push
-ssh bubujka@najomi.org 'cd najomi; git pull; make cc'
+ssh bubujka@najomi.org 'cd najomi; git pull; ./cc'
