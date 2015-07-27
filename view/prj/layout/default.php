@@ -21,9 +21,6 @@
   <div id='content'>
     <?=$data?>
   </div>
-  <center id='grape-banner'>
-  <a href='mailto:am@grape.ru'><img src='/public/hire2.png' width='700px' style='border: 1px solid grey; margin: 20px 0px;'></a>
-  </center>
   <div id='footer'>
   <table>
   <tr>

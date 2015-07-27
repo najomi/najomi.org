@@ -1,2 +1,0 @@
-#!/bin/bash
-php -S localhost:7000 index.php
