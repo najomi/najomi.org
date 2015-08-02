@@ -32,8 +32,10 @@
 	  <td id='second_col'>
 	  &nbsp;
 	  </td>
-	  <td>
-	    <a href='mailto:zendzirou@gmail.com'>zendzirou@gmail.com</a><br>
+	  <td style='text-align: right'>
+	    По любым вопросам: <a href='mailto:zendzirou@gmail.com'>zendzirou@gmail.com</a><br>
+	    Исходный код сайта: <a href='http://github.com/najomi/najomi.org'>gh:najomi/najomi.org</a><br>
+	    Данные: <a href='http://github.com/najomi/data'>gh:najomi/data</a><br>
 	  </td>
 	</tr>
       </table>
