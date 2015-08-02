@@ -13,9 +13,7 @@
   <br>
   <br>
   Все данные находятся на github.com по адресу:<br>
-  <a href='https://github.com/Bubujka/ru.najomi.org-data'>
-    https://github.com/Bubujka/ru.najomi.org-data
-  </a>
+  <a href='https://github.com/najomi/data'> https://github.com/najomi/data</a>
   <br>
 
 </div>
