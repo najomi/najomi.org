@@ -32,6 +32,9 @@ body{
 a{
     color: #3366FF;
 }
+a:visited{
+    color: #9B159A;
+}
 img{
     border:0px;
 }
@@ -157,7 +160,7 @@ textarea{
     padding-bottom: 20px;
 }
 #footer table td{
-    font-size: 11px;
+    font-size: 14px;
     vertical-align: top;
     padding: 0px 5px;
     white-space: nowrap;
