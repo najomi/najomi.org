@@ -10,12 +10,12 @@ echo '</div>';
 
 echo '<div class="usage_example">';
 if($data->desc())
-	echo '<pre><b class="description">'.$data->desc().'</b></pre>';
+	echo '<p class="description">'.$data->desc().'</p>';
 
 if($data->prop("data")){
 	foreach($data->prop("data") as $v){
 		if(isset($v["desc"]))
-			echo '<pre><b class="description">'.$v['desc'].'</b></pre>';
+			echo '<p class="description">'.$v['desc'].'</p>';
 
                 if(isset($v['code'])){
                         $ft = isset($v['ft']) ? $v['ft'] : $data->ft();

@@ -1,8 +1,3 @@
-*{
-	margin: 0px;
-	padding: 0px;
-}
-
 *:target{
 	background:#eee;
 }
@@ -10,6 +5,15 @@
 body{
     font-family: georgia;
     font-size: 14px;
+}
+
+input.gsc-input,
+.gsc-input-box,
+.gsc-input-box-hover,
+.gsc-input-box-focus,
+.gsc-search-button {
+    box-sizing: content-box; 
+    line-height: normal;
 }
 .usage_example{
     padding: 10px;
@@ -70,12 +74,9 @@ font-size: 16px;
     color: white;
     background: black;
     padding: 5px 15px;
+    margin: 0px 0px 10px 0px
 }
 #content, #footer{
-    width: 700px;
-    position: relative;
-    left: 50%;
-    margin-left: -350px;
 }
 #footer{
     padding-top: 10px;
@@ -85,38 +86,23 @@ font-size: 16px;
     font-size: 11px;
     text-align: center;
 }
-#search{
-    position: absolute;
-    width: 350px;
-    left: -14px;
-    top: -16px;
-
-}
 #menu{
     text-align: right;
-    position: absolute;
     width: 350px;
     right: 0px;
     top: 0px;
 }
 #sub_header{
-    width: 700px;
-    position: relative;
-    left: 50%;
     height: 20px;
-    margin-left: -350px;
     margin-bottom: 20px;
 }
 #header{
-    width: 700px;
     margin-top: 30px;
     margin-bottom: 20px;
     font-family: 'Lobster', cursive;
     font-weight: normal;
     position: relative;
     font-size: 34px;
-    left: 50%;
-    margin-left: -350px;
 }
 
 #error_404{
@@ -184,15 +170,16 @@ textarea{
 }
 
 #quote{
-    width: 400px;
-    position: relative;
-
-    left: 300px;
+  padding-bottom: 20px;
 }
-
+#search{
+  position: relative;
+  left: -30px;
+}
 #quote #author{
     margin-top: 10px;
     text-align: right;
+
 }
 hr{
     border: 0px;
@@ -237,4 +224,7 @@ mark{
 }
 .category_info li{
   margin-left: 30px;
+}
+.top-menu-link{
+  padding-top: 18px;
 }

@@ -1,6 +1,6 @@
 <?=bu::view('path_block')?>
 <? if($data->getInfo()):?>
-<div class='category_info'>
+<div class='alert alert-info'>
   <?=$data->getInfo()?>
 </div>
 <? endif ?>

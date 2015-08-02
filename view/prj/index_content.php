@@ -1,19 +1,36 @@
 <div id='info'>
-  <div id='quote'>
-    The book contains almost 500 examples of good and bad code. I’ve included so
-    many examples because, personally, I learn best from examples. I think other
-    programmers learn best that way too.
-    <div id='author'>Steve McConnell, Code Complete 2nd edition</div>
+  <div class="col-xs-6 pull-right">
+    <div id='quote'>
+      The book contains almost 500 examples of good and bad code. I’ve included so
+      many examples because, personally, I learn best from examples. I think other
+      programmers learn best that way too.
+      <div id='author'>Steve McConnell, Code Complete 2nd edition</div>
+    </div>
   </div>
-  <br>
+  <div class="clearfix"></div>
 
   Этот сайт создаётся с идеей собрать как можно больше
   различных примеров по использованию консольных утилит и
   языков программирования.
   <br>
   <br>
-  Все данные находятся на github.com по адресу:<br>
-  <a href='https://github.com/najomi/data'> https://github.com/najomi/data</a>
+  
+  <div class="alert alert-info">
+    <div class="alert-body">
+      <p>
+        Исходный код этого сайта и все его данные можно забрать с github:
+
+        <ul>
+          <li>
+            <a href='https://github.com/najomi/data'>https://github.com/najomi/data</a>
+          </li>
+          <li>
+            <a href='https://github.com/najomi/najomi.org'> https://github.com/najomi/najomi.org</a>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
   <br>
 
 </div>
