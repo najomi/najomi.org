@@ -69,7 +69,7 @@
     })();
     var SEARCH = $('#search');
 
-    ga('create', 'UA-9241103-3', 'ru.najomi.org');
+    ga('create', 'UA-9241103-3', 'najomi.org');
 
     hljs.tabReplace = '    ';
     hljs.initHighlightingOnLoad();
