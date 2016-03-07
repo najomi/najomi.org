@@ -64,6 +64,7 @@ def('is_category_exists', function ($path) {
 
   return false;
 });
+
 def('is_example_exists', function ($path) {
   if (!is_example_path($path)) {
     throw new Exception('Path is not valid: ' . $path);
@@ -123,8 +124,14 @@ def('count_examples', function () {
 });
 
 def('ordered_exampls', function ($pth) {
+  if (!is_category_exists($pth)) {
+    throw new Exception("Category $pth not exists");
+  }
+
   $PREFIX = data_directory() . '/' . $pth . '/';
-  $data   = glob($PREFIX . '[0-9]*');
+  $data   = array_filter(glob($PREFIX . '[0-9]*'), function ($pth) {
+    return is_file($pth);
+  });
 
   natsort($data);
   $data     = array_values($data);

@@ -71,4 +71,33 @@ class ExampleHelpersTest extends PHPUnit_Framework_TestCase {
       $this->assertFalse(is_example_path($v), 'Testing: ' . $v);
     }
   }
+
+  public function testOrderedExamples() {
+    $t  = ordered_exampls('ordered_examples/1');
+    $fn = function ($itm) {
+      return data_directory() . '/ordered_examples/1/' . $itm;
+    };
+    $this->assertEquals($t, array_map($fn, [2, 3, 4, 5, 10, 100, 101]));
+  }
+
+  public function testOrderedExamplesHandleOnlyFiles() {
+    $t  = ordered_exampls('ordered_examples/3');
+    $fn = function ($itm) {
+      return data_directory() . '/ordered_examples/3/' . $itm;
+    };
+    $this->assertEquals($t, array_map($fn, [1, 2, 4]));
+  }
+
+  public function testOrderedExamplesRaiseException() {
+    $this->expectException(Exception::class);
+    $t = ordered_exampls('ordered_examples/not_found');
+  }
+
+  public function testOrderedExamplesWithMeta() {
+    $t  = ordered_exampls('ordered_examples/2');
+    $fn = function ($itm) {
+      return data_directory() . '/ordered_examples/2/' . $itm;
+    };
+    $this->assertEquals($t, array_map($fn, [2, 3, 1]));
+  }
 }

@@ -11,7 +11,8 @@ if (!path()) {
     $category = Category::get(path());
     keywords($category->keywords());
 
-    draw_page($category->getTitle(),
+    draw_page(
+      $category->getTitle(),
       dview('one_category', $category));
   } else {
     show_404();
