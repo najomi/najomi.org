@@ -3,9 +3,9 @@
 class Example {
   public $category;
 
-  public $file_id;
+  private $file_id;
 
-  public $pth;
+  private $pth;
 
   public function __construct($pth) {
     if (!is_example_path($pth) || !is_example_exists($pth)) {

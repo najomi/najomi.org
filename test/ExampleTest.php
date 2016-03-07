@@ -4,8 +4,13 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
     data_directory(__DIR__ . '/data');
   }
 
-  public function testCanBeNegated() {
-    //new Example('ololo');
-    $this->assertEquals(-1, -1);
+  public function testExceptionOnNotExistedPath() {
+    $this->expectException(Exception::class);
+    new Example('example/2');
+  }
+
+  public function testExceptionOnWrongPath() {
+    $this->expectException(Exception::class);
+    new Example('example/WRONG.md');
   }
 }
