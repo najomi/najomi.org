@@ -24,6 +24,10 @@ class Category {
   private $_path = '';
 
   public function __construct($path) {
+    if (!is_category_exists($path)) {
+      throw new Exception("Path not exists $path");
+    }
+
     $this->_path = $path;
     $parent_path = preg_replace('@/[^/]+$@', '', $path);
 
