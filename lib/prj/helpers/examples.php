@@ -51,6 +51,19 @@ def('is_example_path', function ($url) {
   return true;
 });
 
+def('is_category_exists', function ($path) {
+  if (!is_category_path($path)) {
+    throw new Exception('Path is not valid: ' . $path);
+  }
+
+  $path = data_directory() . '/' . $path;
+
+  if (file_exists($path) && is_dir($path)) {
+    return true;
+  }
+
+  return false;
+});
 def('is_example_exists', function ($path) {
   if (!is_example_path($path)) {
     throw new Exception('Path is not valid: ' . $path);

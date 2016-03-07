@@ -5,7 +5,7 @@ class ExampleHelpersTest extends PHPUnit_Framework_TestCase {
     'with"\'quotes', 'рашнлеттерс'];
 
   private $valid_categories = [
-    '_nix/imagemagic', 'php',
+    '_nix/imagemagic', 'php', 'CapitalLetters',
     'php/php7', 'very/very/long',
     'ubuntu/14.04', '_-_/_-_', '2008'];
 
@@ -15,6 +15,17 @@ class ExampleHelpersTest extends PHPUnit_Framework_TestCase {
 
   public function testDataHelper() {
     $this->assertEquals(data('lol'), data_directory() . '/lol');
+  }
+
+  public function testIsCategoryExists() {
+    $this->assertTrue(is_category_exists('is_category_exists/1'));
+    $this->assertFalse(is_category_exists('is_category_exists/500'));
+    $this->assertFalse(is_category_exists('is_category_exists/2'));
+  }
+
+  public function testIsCategoryExistsRaiseException() {
+    $this->expectException(Exception::class);
+    is_category_exists('php/рашндир');
   }
 
   public function testIsCategoryPath() {
