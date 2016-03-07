@@ -34,6 +34,13 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
     new Example('example/WRONG.md');
   }
 
+  public function testFormat() {
+    $e = new Example('example/5');
+    $this->assertEquals('v1', $e->format());
+    $e2 = new Example('example/hello.md');
+    $this->assertEquals('md', $e2->format());
+  }
+
   public function testKeywordsMethod() {
     $e = new Example('example/5');
     $this->assertEquals(['example примеры', 'example usage', 'example example'], $e->keywords());
@@ -63,6 +70,5 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($e->id(), 3);
     $this->assertEquals($e->ft(), 'lisp');
     $this->assertEquals($e->url(), '/example/5');
-
   }
 }

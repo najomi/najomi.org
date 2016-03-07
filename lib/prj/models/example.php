@@ -35,6 +35,14 @@ class Example {
     return $this->file_id;
   }
 
+  public function format() {
+    if (preg_match('/\.md$/', $this->pth)) {
+      return 'md';
+    }
+
+    return 'v1';
+  }
+
   public function ft() {
     if ($this->prop('ft')) {
       return $this->prop('ft');
