@@ -1,4 +1,5 @@
 <?php
+require_once 'vendor/autoload.php';
 require_once 'lib/prj/cache.php';
 include 'base.php';
 include 'boot/spyc.php'; #библиотека для парсинга конфигов
