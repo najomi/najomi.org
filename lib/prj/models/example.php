@@ -23,8 +23,19 @@ class Example {
     $this->category = new Category($category_path);
   }
 
+  public function body() {
+    $parser   = new Mni\FrontYAML\Parser();
+    $document = $parser->parse(file_get_contents(data_directory() . '/' . $this->pth));
+    $html     = $document->getContent();
+    return $html;
+  }
+
   public function code() {
     return $this->prop('code');
+  }
+
+  public function content() {
+    return dview('example-formats/' . $this->format(), $this);
   }
 
   public function desc() {
