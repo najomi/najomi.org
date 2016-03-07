@@ -35,6 +35,8 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testKeywordsMethod() {
+    $e = new Example('example/5');
+    $this->assertEquals(['example примеры', 'example usage', 'example example'], $e->keywords());
   }
 
   public function testPropMethod() {
@@ -58,8 +60,8 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($e->desc(), 'Hello');
     $this->assertEquals($e->code(), 'ls');
     $this->assertEquals($e->file_id(), '5');
+    $this->assertEquals($e->id(), 3);
     $this->assertEquals($e->ft(), 'lisp');
-    $this->assertEquals($e->id(), '');
     $this->assertEquals($e->url(), '/example/5');
 
   }

@@ -123,7 +123,7 @@ def('count_examples', function () {
 });
 
 def('ordered_exampls', function ($pth) {
-  $PREFIX = './data/' . $pth . '/';
+  $PREFIX = data_directory() . '/' . $pth . '/';
   $data   = glob($PREFIX . '[0-9]*');
 
   natsort($data);

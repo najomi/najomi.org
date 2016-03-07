@@ -5,6 +5,8 @@ class Example {
 
   private $file_id;
 
+  private $position;
+
   private $pth;
 
   public function __construct($pth) {
@@ -17,7 +19,7 @@ class Example {
 
     $category_path = implode('/', but_last(explode('/', $pth)));
 
-    $this->id       = find_position($this->file_id, $category_path);
+    $this->position = find_position($this->file_id, $category_path);
     $this->category = Category::get($category_path);
   }
 
@@ -42,7 +44,7 @@ class Example {
   }
 
   public function id() {
-    return $this->id;
+    return $this->position;
   }
 
   public function keywords() {
