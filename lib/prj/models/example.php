@@ -70,7 +70,7 @@ class Example {
   }
 
   public function props() {
-    return unyaml('data/' . $this->pth);
+    return unyaml(data_directory() . '/' . $this->pth);
   }
 
   public function url() {
