@@ -107,14 +107,23 @@ def('find_position', function ($id, $pth) {
   }
 });
 
+/**
+ * Это ссылка на сайт?
+ */
 def('is_normal_link', function ($href) {
   return !!preg_match('@^https?:@i', $href);
 });
 
+/**
+ * Это ссылка на мыло?
+ */
 def('is_email_link', function ($href) {
   return !!preg_match('@^mailto:@i', $href);
 });
 
+/**
+ * Взять ссылку и обернуть в <a>, если это целесообразно
+ */
 def('nice_link', function ($href) {
   if (is_normal_link($href)) {
     $name = parse_url($href, PHP_URL_HOST);
@@ -129,10 +138,16 @@ def('nice_link', function ($href) {
   return '<a href="' . $href . '">' . $name . '</a>';
 });
 
+/**
+ * Узнать сколько примеров в базе
+ */
 def('count_examples', function () {
   return trim(`cd data; find * -type f -name '[0-9]*' | wc -l`);
 });
 
+/**
+ * Из каталога возвращает пути до всех примеров в правильном порядке
+ */
 def('ordered_exampls', function ($pth) {
   if (!is_category_exists($pth)) {
     throw new Exception("Category $pth not exists");
