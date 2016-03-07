@@ -23,6 +23,10 @@ class Category {
 
   private $_path = '';
 
+  /**
+   * Создаём из пути объект-категории
+   */
+
   public function __construct($path) {
     if (!is_category_exists($path)) {
       throw new Exception("Path not exists $path");
@@ -36,12 +40,18 @@ class Category {
     }
   }
 
-  public static function get($path) {
-    return new Category($path);
+  public function categories() {
+    return self::getSub($this->_path);
+  }
+
+  public function examples() {
+    return array_map(function ($pth) {
+      return new Example(str_replace(data_directory() . '/', '', $pth));
+    }, ordered_exampls($this->_path));
   }
 
   public function getAuthors() {
-    $us     = $this->getUsage();
+    $us     = $this->examples();
     $return = [];
 
     foreach ($us as $v) {
@@ -77,7 +87,7 @@ class Category {
   }
 
   public function getLinks() {
-    $us     = $this->getUsage();
+    $us     = $this->examples();
     $return = [];
 
     foreach ($us as $v) {
@@ -102,39 +112,14 @@ class Category {
 
     foreach ($dirs as $k => $v) {
       $v        = str_replace(data_directory() . '/', '', $v);
-      $dirs[$k] = Category::get($v);
+      $dirs[$k] = new Category($v);
     }
 
     return sortByName($dirs);
   }
 
-  public function getSubDirs() {
-    return self::getSub($this->_path);
-  }
-
   public function getTitle() {
     return ($this->meta('title') ? $this->meta('title') : sprintf("Примеры: %s\n", $this->name()));
-  }
-
-  public function getUsage() {
-    $us     = ordered_exampls($this->_path);
-    $return = [];
-
-    foreach ($us as $v) {
-      $return[] = new Example(str_replace('./data/', '', $v));
-    }
-
-    return $return;
-  }
-
-  public static function isValidPath($path) {
-    if (!preg_match('/^[a-z_0-9\.\/-]+$/i', $path)) {
-      return false;
-    }
-
-    if (is_dir(data_directory() . '/' . $path)) {
-      return true;
-    }
   }
 
   public function keywords() {

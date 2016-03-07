@@ -20,7 +20,7 @@ class Example {
     $category_path = implode('/', but_last(explode('/', $pth)));
 
     $this->position = find_position($this->file_id, $category_path);
-    $this->category = Category::get($category_path);
+    $this->category = new Category($category_path);
   }
 
   public function code() {

@@ -10,7 +10,7 @@ foreach ($path as $k => $v) {
   $category_path = trim($prefix . $v, '/');
 
   if (is_category_path($category_path) && is_category_exists($category_path)) {
-    $c = Category::get($category_path);
+    $c = new Category($category_path);
 
     if ($k == $last_i) {
       echo '<b>' . $c->name() . '</b>' . "\n";

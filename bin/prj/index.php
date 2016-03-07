@@ -5,18 +5,14 @@ if (!path()) {
     dview('index_content',
       main_categories()));
 } elseif (is_category_path(path()) && is_category_exists(path())) {
-  if (Category::isValidPath(path())) {
-    is_need_cache(true);
+  is_need_cache(true);
 
-    $category = Category::get(path());
-    keywords($category->keywords());
+  $category = new Category(path());
+  keywords($category->keywords());
 
-    draw_page(
-      $category->getTitle(),
-      dview('one_category', $category));
-  } else {
-    show_404();
-  }
+  draw_page(
+    $category->getTitle(),
+    dview('one_category', $category));
 } elseif (is_example_path(path()) && is_example_exists(path())) {
   is_need_cache(true);
 

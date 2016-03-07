@@ -1,5 +1,6 @@
 <?=bu::view('path_block')?>
 <?
+
 if ($data->getInfo()): ?>
 <div class='alert alert-info'>
   <?=$data->getInfo()?>
@@ -7,14 +8,15 @@ if ($data->getInfo()): ?>
 <?endif?>
 
 <?
-if ($data->getSubDirs()): ?>
+
+if ($data->categories()): ?>
 <div id="subdirs">
 	 <?
-$sub_dirs = $data->getSubDirs();
+$sub_dirs = $data->categories();
 
 if (count($sub_dirs) > 20) {
   $groups = group_by(function ($k, $v) {return strtolower(first_letter($v->name()));},
-    $data->getSubDirs());
+    $data->categories());
   ksort($groups);
   $columns = group_by_column($groups, 3);
   echo '<table><tr>';
@@ -56,8 +58,9 @@ if (count($sub_dirs) > 20) {
 
 
 <?
-if ($data->getUsage()): ?>
-<?=map_dview('example', $data->getUsage(), '<hr>')?>
+
+if ($data->examples()): ?>
+<?=map_dview('example', $data->examples(), '<hr>')?>
 <?=view('links-block', ['links' => $data->getLinks(), 'title' => 'Источник', 'titles' => 'Источники'])?>
 <?=view('links-block', ['links' => $data->getAuthors(), 'title' => 'Автор', 'titles' => 'Авторы'])?>
 <?else: ?>
@@ -76,6 +79,7 @@ if ($data->getUsage()): ?>
 </div>
 <?endif;?>
 <?
+
 if ($data->meta('links')): ?>
 <?=cehr()?>
 <div class='category-links'>
@@ -83,8 +87,10 @@ if ($data->meta('links')): ?>
 	 Ссылки по теме:
 	 <ul>
 	<?
+
 foreach ($data->meta('links') as $v): ?>
 	<?
+
 if (!is_array($v)): ?>
 	 <li> <?=nice_link($v)?> </li>
 	<?elseif (count($v) == 1): ?>
