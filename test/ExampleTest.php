@@ -71,4 +71,14 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($e->ft(), 'lisp');
     $this->assertEquals($e->url(), '/example/5');
   }
+
+  public function testYFMInMarkdown() {
+    $e = new Example('example/hello.md');
+    $this->assertEquals($e->desc(), 'Hello');
+    $this->assertEquals($e->code(), 'ls');
+    $this->assertEquals($e->file_id(), 'hello.md');
+    $this->assertEquals($e->id(), 7);
+    $this->assertEquals($e->ft(), 'lisp');
+    $this->assertEquals($e->url(), '/example/hello.md');
+  }
 }

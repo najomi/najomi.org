@@ -1,0 +1,9 @@
+---
+desc: Hello
+code: ls
+out: 1.txt 2.txt
+link: http://najomi.org
+ft: lisp
+---
+
+hello fucking world

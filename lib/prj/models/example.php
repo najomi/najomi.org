@@ -76,7 +76,16 @@ class Example {
   }
 
   public function props() {
-    return unyaml(data_directory() . '/' . $this->pth);
+    if ($this->format() == 'v1') {
+      return unyaml(data_directory() . '/' . $this->pth);
+    } elseif ($this->format() == 'md') {
+      $parser   = new Mni\FrontYAML\Parser();
+      $document = $parser->parse(file_get_contents(data_directory() . '/' . $this->pth));
+      $yaml     = $document->getYAML();
+      $html     = $document->getContent();
+
+      return ($yaml);
+    }
   }
 
   public function url() {
