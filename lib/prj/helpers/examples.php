@@ -1,5 +1,8 @@
 <?php
-def_accessor('data_directory', './data');
+def_accessor('data_directory', BASE_DIRECTORY . '/data');
+function strip_data_direcotry($pth) {
+  return str_replace(data_directory() . '/', '', $pth);
+}
 
 /**
  * Функция для получения пути внутри каталога с данными
@@ -154,8 +157,8 @@ def('ordered_exampls', function ($pth) {
   }
 
   $PREFIX = data_directory() . '/' . $pth . '/';
-  $data   = array_filter(glob($PREFIX . '[0-9]*'), function ($pth) {
-    return is_file($pth);
+  $data   = array_filter(glob($PREFIX . '*'), function ($pth) {
+    return (is_example_path(strip_data_direcotry($pth)) && is_file($pth));
   });
 
   natsort($data);

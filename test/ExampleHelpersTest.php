@@ -107,12 +107,28 @@ class ExampleHelpersTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($t, array_map($fn, [2, 3, 4, 5, 10, 100, 101]));
   }
 
+  public function testOrderedExamplesHandleMarkdown() {
+    $t  = ordered_exampls('ordered_examples/4');
+    $fn = function ($itm) {
+      return data_directory() . '/ordered_examples/4/' . $itm;
+    };
+    $this->assertEquals($t, array_map($fn, [1, 2, 'hello.md']));
+  }
+
   public function testOrderedExamplesHandleOnlyFiles() {
     $t  = ordered_exampls('ordered_examples/3');
     $fn = function ($itm) {
       return data_directory() . '/ordered_examples/3/' . $itm;
     };
     $this->assertEquals($t, array_map($fn, [1, 2, 4]));
+  }
+
+  public function testOrderedExamplesIgnoresMetaYaml() {
+    $t  = ordered_exampls('ordered_examples/5');
+    $fn = function ($itm) {
+      return data_directory() . '/ordered_examples/5/' . $itm;
+    };
+    $this->assertEquals($t, array_map($fn, [1, 2]));
   }
 
   public function testOrderedExamplesRaiseException() {
