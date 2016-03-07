@@ -4,6 +4,14 @@ class CategoryTest extends PHPUnit_Framework_TestCase {
     data_directory(__DIR__ . '/data/category');
   }
 
+  public function testCategories() {
+    $c    = new Category('php');
+    $cats = $c->categories();
+    $this->assertEquals(count($cats), 2);
+    $this->assertEquals($cats[0]->name(), 'gd');
+    $this->assertEquals($cats[1]->name(), 'unlink');
+  }
+
   public function testCategoryHaveParent() {
     $c = new Category('php/unlink');
     $this->assertInstanceOf(Category::class, $c->parent);

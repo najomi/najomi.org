@@ -40,6 +40,9 @@ class Category {
     }
   }
 
+  /**
+   * Получить объекты подкаталогов
+   */
   public function categories() {
     return self::getSub($this->_path);
   }
@@ -99,6 +102,9 @@ class Category {
     return $return;
   }
 
+  /**
+   * Вернуть отсортированный список объектов-подкаталогов по пути
+   */
   public static function getSub($path = '') {
     if ($path) {
       $path .= '/';
@@ -110,12 +116,9 @@ class Category {
       return [];
     }
 
-    foreach ($dirs as $k => $v) {
-      $v        = str_replace(data_directory() . '/', '', $v);
-      $dirs[$k] = new Category($v);
-    }
-
-    return sortByName($dirs);
+    return sortByName(array_map(function ($pth) {
+      return new Category(str_replace(data_directory() . '/', '', $pth));
+    }, $dirs));
   }
 
   public function getTitle() {
