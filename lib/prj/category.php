@@ -17,8 +17,6 @@ function sortByName($collection) {
 }
 
 class Category {
-  const PREFIX = './data/';
-
   public $_meta;
 
   public $parent;
@@ -61,7 +59,7 @@ class Category {
 
   public function getKeywords() {
     return $this->keywords();
-    $key_file = self::PREFIX . $this->_path . '/keywords';
+    $key_file = data_directory() . '/' . $this->_path . '/keywords';
 
     if (file_exists($key_file)) {
       return trim(file_get_contents($key_file));
@@ -96,14 +94,14 @@ class Category {
       $path .= '/';
     }
 
-    $dirs = glob(self::PREFIX . $path . '*', GLOB_ONLYDIR);
+    $dirs = glob(data_directory() . '/' . $path . '*', GLOB_ONLYDIR);
 
     if (!$dirs) {
       return [];
     }
 
     foreach ($dirs as $k => $v) {
-      $v        = str_replace(self::PREFIX, '', $v);
+      $v        = str_replace(data_directory() . '/', '', $v);
       $dirs[$k] = Category::get($v);
     }
 
@@ -134,7 +132,7 @@ class Category {
       return false;
     }
 
-    if (is_dir(self::PREFIX . $path)) {
+    if (is_dir(data_directory() . '/' . $path)) {
       return true;
     }
   }
