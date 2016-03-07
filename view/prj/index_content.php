@@ -14,7 +14,7 @@
   языков программирования.
   <br>
   <br>
-  
+
   <div class="alert alert-info">
     <div class="alert-body">
       <p>
@@ -36,23 +36,26 @@
 </div>
 <div id='subdirs'>
   <ul>
-    <? foreach($data as $v):?>
-    <li><a href='<?=$v->getHref()?>'><?=$v->getName()?></a></li>
-<? endforeach ?>
+    <?
+foreach ($data as $v): ?>
+    <li><a href='<?=$v->getHref()?>'><?=$v->name()?></a></li>
+<?endforeach?>
 </ul>
 </div>
 
 <div class='category-links'>
   Интересные материалы:
   <ul>
-    <? foreach(unyaml('data/links.yaml') as $v): ?>
+    <?
+foreach (unyaml('data/links.yaml') as $v): ?>
     <li>
-      <? if(is_array($v)): ?>
+      <?
+if (is_array($v)): ?>
       <a href='<?=car($v)?>'><?=car($v)?></a> <?=cdr($v)?>
-      <? else: ?>
+      <?else: ?>
       <a href='<?=$v?>'><?=$v?></a>
-      <? endif ?>
+      <?endif?>
     </li>
-    <? endforeach ?>
+    <?endforeach?>
   </ul>
 </div>

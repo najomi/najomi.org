@@ -13,4 +13,14 @@ class CategoryTest extends PHPUnit_Framework_TestCase {
     $this->expectException(Exception::class);
     $c = new Category('not_found');
   }
+
+  public function testName() {
+    $c = new Category('php');
+    $this->assertEquals($c->name(), 'php');
+  }
+
+  public function testNameInMetaYaml() {
+    $c = new Category('name');
+    $this->assertEquals($c->name(), 'ololo');
+  }
 }

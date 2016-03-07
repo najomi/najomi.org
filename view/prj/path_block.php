@@ -13,9 +13,9 @@ foreach ($path as $k => $v) {
     $c = Category::get($category_path);
 
     if ($k == $last_i) {
-      echo '<b>' . $c->getName() . '</b>' . "\n";
+      echo '<b>' . $c->name() . '</b>' . "\n";
     } else {
-      echo '<a href="' . $prefix . $v . '">' . $c->getName() . '</a> &rarr;' . "\n";
+      echo '<a href="' . $prefix . $v . '">' . $c->name() . '</a> &rarr;' . "\n";
     }
   } elseif (is_example_path($category_path) && is_example_exists($category_path)) {
     echo '<b>пример #' . $id . '</b>' . "\n";

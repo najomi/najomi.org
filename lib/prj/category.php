@@ -4,7 +4,7 @@ function sortByName($collection) {
   $tmp    = [];
 
   foreach ($collection as $k => $v) {
-    $tmp[$k] = $v->getName();
+    $tmp[$k] = $v->name();
   }
 
   asort($tmp);
@@ -69,7 +69,7 @@ class Category {
       return trim(file_get_contents($key_file));
     }
 
-    $name       = $this->getName();
+    $name       = $this->name();
     $keywords[] = $name . ' примеры';
     $keywords[] = $name . ' usage';
     $keywords[] = $name . ' example';
@@ -87,10 +87,6 @@ class Category {
     }
 
     return $return;
-  }
-
-  public function getName() {
-    return $this->name();
   }
 
   public static function getSub($path = '') {
@@ -170,6 +166,9 @@ class Category {
     }
   }
 
+  /**
+   * Получить название категории
+   */
   public function name() {
     return ($this->meta('name') ? $this->meta('name') : basename($this->_path));
   }
