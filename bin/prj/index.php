@@ -34,7 +34,7 @@ if (!path()) {
     return 'Пример: ' . implode('/', $cats) . ' #' . $example->id();
   }
 
-  $example = find_example(path());
+  $example = new Example(path());
   keywords($example->keywords());
   draw_page($example->prop('desc'),
     view('path_block', ['id' => $example->id()]) .

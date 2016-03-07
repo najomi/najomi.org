@@ -11,7 +11,9 @@ def('data', function ($pth) {
 def('main_categories', function () {
   return Category::getSub();
 });
-
+/**
+ * Этот путь - является ли категорией?
+ */
 def('is_category_path', function ($v) {
   if (!$v) {
     return false;
@@ -28,6 +30,9 @@ def('is_category_path', function ($v) {
   return true;
 });
 
+/**
+ * Этот путь подходит ли для примера?
+ */
 def('is_example_path', function ($url) {
   if (!$url) {
     return false;
@@ -51,6 +56,9 @@ def('is_example_path', function ($url) {
   return true;
 });
 
+/**
+ * Существует ли эта категория в папке с данными?
+ */
 def('is_category_exists', function ($path) {
   if (!is_category_path($path)) {
     throw new Exception('Path is not valid: ' . $path);
@@ -65,6 +73,9 @@ def('is_category_exists', function ($path) {
   return false;
 });
 
+/**
+ * Существует ли пример по данному пути
+ */
 def('is_example_exists', function ($path) {
   if (!is_example_path($path)) {
     throw new Exception('Path is not valid: ' . $path);
@@ -79,10 +90,9 @@ def('is_example_exists', function ($path) {
   return false;
 });
 
-def('find_example', function ($path) {
-  return new Example($path);
-});
-
+/**
+ * Зная идентификатор - узнать на каком месте он находится в категории
+ */
 def('find_position', function ($id, $pth) {
   $i   = 0;
   $all = ordered_exampls($pth);
@@ -98,11 +108,11 @@ def('find_position', function ($id, $pth) {
 });
 
 def('is_normal_link', function ($href) {
-  return preg_match('@^https?:@', $href);
+  return !!preg_match('@^https?:@i', $href);
 });
 
 def('is_email_link', function ($href) {
-  return preg_match('@^mailto:@', $href);
+  return !!preg_match('@^mailto:@i', $href);
 });
 
 def('nice_link', function ($href) {

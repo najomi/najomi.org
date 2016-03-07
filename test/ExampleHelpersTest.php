@@ -38,6 +38,11 @@ class ExampleHelpersTest extends PHPUnit_Framework_TestCase {
     }
   }
 
+  public function testIsEmailLink() {
+    $this->assertTrue(is_email_link('mailto:zendzirou@gmail.com'));
+    $this->assertFalse(is_email_link('http://ya.ru'));
+  }
+
   public function testIsExampleExists() {
     $this->assertTrue(is_example_exists('is_example_exists/1'));
     $this->assertFalse(is_example_exists('is_example_exists/500'));
@@ -69,6 +74,28 @@ class ExampleHelpersTest extends PHPUnit_Framework_TestCase {
 
     foreach ($invalid as $v) {
       $this->assertFalse(is_example_path($v), 'Testing: ' . $v);
+    }
+  }
+
+  public function testIsNormalLink() {
+    $this->assertTrue(is_normal_link('http://ya.ru/hello.txt'));
+    $this->assertTrue(is_normal_link('https://ya.ru/hello.txt'));
+    $this->assertTrue(is_normal_link('HTTP://ya.ru/hello.txt'));
+    $this->assertFalse(is_normal_link('//ya.ru/hello.txt'));
+    $this->assertFalse(is_normal_link('mailto:bubujka@ya.ru'));
+  }
+
+  public function testNiceLink() {
+    $r = [
+      'http://ya.ru'           => '<a href="http://ya.ru">ya.ru</a>',
+      'http://ya.ru/link.txt'  => '<a href="http://ya.ru/link.txt">ya.ru</a>',
+      'https://ya.ru/link.txt' => '<a href="https://ya.ru/link.txt">ya.ru</a>',
+      'mailto:bubujka@ya.ru'   => '<a href="mailto:bubujka@ya.ru">bubujka@ya.ru</a>',
+      'man gimp'               => 'man gimp',
+    ];
+
+    foreach ($r as $k => $v) {
+      $this->assertEquals(nice_link($k), $v, 'Testing ' . $k);
     }
   }
 

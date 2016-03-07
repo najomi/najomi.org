@@ -123,7 +123,7 @@ class Category {
     $return = [];
 
     foreach ($us as $v) {
-      $return[] = find_example(str_replace('./data/', '', $v));
+      $return[] = new Example(str_replace('./data/', '', $v));
     }
 
     return $return;
