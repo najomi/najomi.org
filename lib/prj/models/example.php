@@ -38,11 +38,7 @@ class Example {
       return $this->prop('ft');
     }
 
-    if ($this->category->syntax()) {
-      return $this->category->syntax();
-    }
-
-    return false;
+    return $this->category->syntax();
   }
 
   public function id() {

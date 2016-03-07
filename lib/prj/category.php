@@ -175,12 +175,10 @@ class Category {
   public function syntax() {
     if ($this->meta('ft')) {
       return $this->meta('ft');
+    } elseif ($this->parent) {
+      return $this->parent->syntax();
     }
 
-    if ($this->parent) {
-      if ($this->parent->meta('ft')) {
-        return $this->parent->meta('ft');
-      }
-    }
+    return 'txt';
   }
 }
