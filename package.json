@@ -1,0 +1,19 @@
+{
+  "name": "najomi.org",
+  "version": "1.0.0",
+  "description": "Этот код писался году в 2009 =_=",
+  "main": "index.js",
+  "scripts": {
+    "test": "phpunit --bootstrap bootstrap.php --colors=always test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najomi/najomi.org.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/najomi/najomi.org/issues"
+  },
+  "homepage": "https://github.com/najomi/najomi.org#readme"
+}

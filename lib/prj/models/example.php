@@ -1,65 +1,79 @@
 <?php
 
-class Example{
-	var $pth, $file_id, $category;
-	function __construct($pth){
-		if(!is_example_path($pth) or
-		   !is_example_exists($pth))
-			throw new Exception("Example $pth not exists");
-		$this->pth = $pth;
-		$this->file_id = last(explode('/', $pth));
+class Example {
+  public $category;
 
-		$category_path = implode('/', but_last(explode('/', $pth)));
+  public $file_id;
 
-		$this->id = find_position($this->file_id, $category_path);
-		$this->category = Category::get($category_path);
-	}
+  public $pth;
 
-	function keywords(){
-		return $this->category->keywords();
-	}
+  public function __construct($pth) {
+    if (!is_example_path($pth) || !is_example_exists($pth)) {
+      throw new Exception("Example $pth not exists");
+    }
 
-	function file_id(){
-		return $this->file_id;
-	}
+    $this->pth     = $pth;
+    $this->file_id = last(explode('/', $pth));
 
-	function id(){
-		return $this->id;
-	}
+    $category_path = implode('/', but_last(explode('/', $pth)));
 
-	function url(){
-		return '/'.$this->pth;
-	}
+    $this->id       = find_position($this->file_id, $category_path);
+    $this->category = Category::get($category_path);
+  }
 
-	function desc(){
-		return $this->prop('desc');
-	}
+  public function code() {
+    return $this->prop('code');
+  }
 
-	function ft(){
-		if($this->prop('ft'))
-			return $this->prop('ft');
-		if($this->category->syntax())
-			return $this->category->syntax();
-		return false;
-	}
+  public function desc() {
+    return $this->prop('desc');
+  }
 
-	function link(){
-		return $this->prop('link');
-	}
-	function prop($v){
-		$props = $this->props();
-		if(isset($props[$v]))
-			return $props[$v];
-	}
+  public function file_id() {
+    return $this->file_id;
+  }
 
-	function props(){
-		return unyaml('data/'.$this->pth);
-	}
+  public function ft() {
+    if ($this->prop('ft')) {
+      return $this->prop('ft');
+    }
 
-	function code(){
-		return $this->prop('code');
-	}
-	function out(){
-		return $this->prop('out');
-	}
+    if ($this->category->syntax()) {
+      return $this->category->syntax();
+    }
+
+    return false;
+  }
+
+  public function id() {
+    return $this->id;
+  }
+
+  public function keywords() {
+    return $this->category->keywords();
+  }
+
+  public function link() {
+    return $this->prop('link');
+  }
+
+  public function out() {
+    return $this->prop('out');
+  }
+
+  public function prop($v) {
+    $props = $this->props();
+
+    if (isset($props[$v])) {
+      return $props[$v];
+    }
+  }
+
+  public function props() {
+    return unyaml('data/' . $this->pth);
+  }
+
+  public function url() {
+    return '/' . $this->pth;
+  }
 }
