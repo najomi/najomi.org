@@ -15,14 +15,19 @@
 
     <div class="col-md-10 col-md-push-1">
       <div id='header'> Большая поваренная книга программиста.  </div>
-      <div id='sub_header'>
-        <?=view('menu')?>
+
+      <div class="row">
+        <div id='sub_header'>
+          <?=view('menu')?>
+        </div>
       </div>
 <!--
       <center>
       <a href='mailto:zendzirou@gmail.com'><img src='/public/hire.png' width='750px' style='border: 1px solid grey; margin: 20px 0px;'></a>
       </center>
 -->
+
+
       <div id='content'>
         <?=$data?>
       </div>
