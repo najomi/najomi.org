@@ -2,8 +2,8 @@
 <html>
 <head>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <LINK REL="stylesheet" TYPE="text/css" HREF="<?php echo bu::pub('css/style.css')?>">
-    <LINK REL="stylesheet" TYPE="text/css" HREF="<?php echo bu::pub('default.css')?>">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="<?php echo bu::pub('css/style.css') ?>">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="<?php echo bu::pub('default.css') ?>">
     <link href='http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
     <LINK REL="SHORTCUT ICON" HREF="<?=bu::pub('favicon.png')?>">
     <title><?=title()?></title>
@@ -18,9 +18,11 @@
       <div id='sub_header'>
         <?=view('menu')?>
       </div>
+<!--
       <center>
       <a href='mailto:zendzirou@gmail.com'><img src='/public/hire.png' width='750px' style='border: 1px solid grey; margin: 20px 0px;'></a>
       </center>
+-->
       <div id='content'>
         <?=$data?>
       </div>
@@ -50,7 +52,7 @@
   <script data-no-instant src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script data-no-instant src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script data-no-instant src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-  <script data-no-instant src="<?php echo bu::pub('instantclick.min.js')?>"></script>
+  <script data-no-instant src="<?php echo bu::pub('instantclick.min.js') ?>"></script>
   <script data-no-instant>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
