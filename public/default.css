@@ -4,10 +4,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 */
 
-pre code {
-  display: block; padding: 0.5em;
-  background: #fff;
-}
 
 pre code,
 pre .ruby .subst,

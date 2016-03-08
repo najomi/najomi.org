@@ -3,8 +3,6 @@
 }
 
 body{
-    font-family: georgia;
-    font-size: 14px;
 }
 
 input.gsc-input,
@@ -43,6 +41,7 @@ img{
     border:0px;
 }
 .num{
+  font-family: georgia;
 	font-size: 30px;
 	font-style: italic;
 	position: absolute;
@@ -64,7 +63,6 @@ img{
 	font-size: 15px;
 }
 #info{
-font-size: 16px;
 }
 #navigation{
     font-family: georgia;
@@ -155,7 +153,7 @@ textarea{
     list-style: none;
 }
 .version{
-    c2olor: gray;
+    color: gray;
 }
 #second_col{
     width: 100%;
@@ -165,9 +163,10 @@ textarea{
     margin-top: 20px;
 }
 
-.description{
-    font-family: monospace;
+#usage p, .description{
+  font-family: monospace;
 }
+
 
 #quote{
   padding-bottom: 20px;
@@ -229,5 +228,9 @@ mark{
   padding-top: 18px;
 }
 body .hljs{
+  background: #f5f5f5;
+}
+pre code {
+  display: block; padding: 0.5em;
   background: #f5f5f5;
 }
