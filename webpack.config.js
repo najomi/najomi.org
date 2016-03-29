@@ -3,6 +3,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: __dirname+'/public',
+    publicPath: '/public',
     filename: 'build.js'
   },
   module: {
@@ -27,5 +28,4 @@ module.exports = {
       '*': 'http://localhost:3001'
     }
   }
-
 };
