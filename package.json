@@ -30,7 +30,10 @@
     "clean-webpack-plugin": "^0.1.8",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "highlight.js": "^9.2.0",
+    "instantclick": "^3.1.0",
     "jquery": "^2.2.2",
+    "script-loader": "^0.6.1",
     "url-loader": "^0.5.7"
   }
 }

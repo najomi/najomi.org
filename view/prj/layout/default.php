@@ -63,23 +63,8 @@
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(gcse, s);
     })();
-    var SEARCH = $('#search');
 
     ga('create', 'UA-9241103-3', 'najomi.org');
-
-    hljs.tabReplace = '    ';
-    hljs.initHighlightingOnLoad();
-
-    InstantClick.on('change', function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-      $('#search').replaceWith(SEARCH);
-
-      ga('send', 'pageview', location.pathname + location.search);
-    })
-
-    InstantClick.init();
   </script>
 </body>
 </html>

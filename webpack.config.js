@@ -20,7 +20,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ETWP.extract('style-loader', 'css-loader')
+        loader: ETWP.extract('style-loader', 'css-loader?minimize')
       },
       {
         test: /\.(jpg|png|ico|svg|ttf|woff|woff2|eot)(\?.*)?$/,
