@@ -6,6 +6,7 @@
     <title><?=title()?></title>
     <meta name="keywords" content="<?=(is_array(keywords()) ? implode(', ', keywords()) : keywords())?>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='/public/build.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="container">
