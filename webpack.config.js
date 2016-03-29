@@ -18,8 +18,8 @@ module.exports = {
         loader: 'style!css'
       },
       {
-        test: /\.(jpg|png|ico)$/,
-        loader: 'url?name=assets/[hash].[ext]&limit=10000'
+        test: /\.(jpg|png|ico|svg|ttf|woff|woff2|eot)(\?.*)?$/,
+        loader: 'url-loader?name=[hash].[ext]&limit=10000'
       }
     ]
   },

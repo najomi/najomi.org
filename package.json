@@ -23,5 +23,11 @@
     "css-loader": "^0.23.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "file-loader": "^0.8.5",
+    "jquery": "^2.2.2",
+    "url-loader": "^0.5.7"
   }
 }
