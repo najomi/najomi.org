@@ -1,7 +1,6 @@
 var hljs = require('highlight.js');
 var $ = require('jquery');
 var search = require('./search.js');
-var ga = require('./ga.js');
 
 var instantclick = require('instantclick');
 
