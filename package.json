@@ -4,6 +4,7 @@
   "description": "Этот код писался году в 2009 =_=",
   "main": "index.js",
   "scripts": {
+    "test-ci": "phpunit --bootstrap bootstrap.php --log-junit=tests.xml test",
     "test": "phpunit --bootstrap bootstrap.php --colors=always test"
   },
   "repository": {

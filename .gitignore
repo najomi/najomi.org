@@ -2,3 +2,4 @@ _dest
 cache/*
 log
 log/.lock
+tests.xml
