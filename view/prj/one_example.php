@@ -28,7 +28,7 @@
 
 <script type="text/javascript">
   DiscourseEmbed = { discourseUrl: 'https://forum.bubujka.org/',
-  discourseEmbedUrl: 'https://najomi.org/<?=path()?>' };
+  discourseEmbedUrl: 'http://najomi.org/<?=path()?>' };
 
   (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
