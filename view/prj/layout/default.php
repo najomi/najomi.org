@@ -58,7 +58,20 @@
   <script data-no-instant src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script data-no-instant src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
   <script data-no-instant src="<?php echo bu::pub('instantclick.min.js') ?>"></script>
+
+  <noscript><div><img src="https://mc.yandex.ru/watch/76744201" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
   <script data-no-instant>
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(76744201, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -87,6 +100,7 @@
       });
       $('#search').replaceWith(SEARCH);
 
+      ym(76744201, 'hit', location.pathname + location.search);
       ga('send', 'pageview', location.pathname + location.search);
     })
 
