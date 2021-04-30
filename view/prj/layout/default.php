@@ -9,6 +9,7 @@
     <title><?=title()?></title>
     <meta name="keywords" content="<?=(is_array(keywords()) ? implode(', ', keywords()) : keywords())?>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
@@ -21,11 +22,22 @@
           <?=view('menu')?>
         </div>
       </div>
+
 <!--
       <center>
       <a href='mailto:zendzirou@gmail.com'><img src='/public/hire.png' width='750px' style='border: 1px solid grey; margin: 20px 0px;'></a>
       </center>
 -->
+      <style>
+        #adfox_161979761756957096 img{
+          border-radius: 7px;
+          border: 1px solid black;
+        }
+        #adfox_161979761756957096 {
+          margin-bottom: 5px;
+        }
+      </style>
+      <div id="adfox_161979761756957096"></div>
 
 
       <div id='content'>
@@ -103,6 +115,23 @@
       ym(76744201, 'hit', location.pathname + location.search);
       ga('send', 'pageview', location.pathname + location.search);
     })
+
+    setInterval(function(){
+      d = document.getElementById('adfox_161979761756957096')
+      if(d.__edited) { return; }
+
+      window.Ya.adfoxCode.create({
+          ownerId: 275375,
+          containerId: 'adfox_161979761756957096',
+          params: {
+              pp: 'g',
+              ps: 'cxoq',
+              p2: 'gfjh'
+          }
+      });
+      d.__edited = true;
+    },1000);
+
 
     InstantClick.init();
   </script>
