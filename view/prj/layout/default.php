@@ -4,7 +4,7 @@
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <LINK REL="stylesheet" TYPE="text/css" HREF="<?php echo bu::pub('css/style.css') ?>">
     <LINK REL="stylesheet" TYPE="text/css" HREF="<?php echo bu::pub('default.css') ?>">
-    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
     <LINK REL="SHORTCUT ICON" HREF="<?=bu::pub('favicon.png')?>">
     <title><?=title()?></title>
     <meta name="keywords" content="<?=(is_array(keywords()) ? implode(', ', keywords()) : keywords())?>">
@@ -65,8 +65,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        </td>
        <td style='text-align: right'>
          По любым вопросам: <a href='mailto:zendzirou@gmail.com'>zendzirou@gmail.com</a><br>
-         Исходный код сайта: <a href='http://github.com/najomi/najomi.org'>gh:najomi/najomi.org</a><br>
-         Данные: <a href='http://github.com/najomi/data'>gh:najomi/data</a><br>
+         Исходный код сайта: <a href='https://github.com/najomi/najomi.org'>gh:najomi/najomi.org</a><br>
+         Данные: <a href='https://github.com/najomi/data'>gh:najomi/data</a><br>
        </td>
       </tr>
           </table>
